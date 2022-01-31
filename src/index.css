@@ -1,0 +1,135 @@
+.ant-table.ant-table-bordered > .ant-table-container > .ant-table-content > table > thead > tr > th, .ant-table.ant-table-bordered > .ant-table-container > .ant-table-header > table > thead > tr > th, .ant-table.ant-table-bordered > .ant-table-container > .ant-table-body > table > thead > tr > th, .ant-table.ant-table-bordered > .ant-table-container > .ant-table-content > table > tbody > tr > td, .ant-table.ant-table-bordered > .ant-table-container > .ant-table-header > table > tbody > tr > td, .ant-table.ant-table-bordered > .ant-table-container > .ant-table-body > table > tbody > tr > td, .ant-table.ant-table-bordered > .ant-table-container > .ant-table-content > table > tfoot > tr > th, .ant-table.ant-table-bordered > .ant-table-container > .ant-table-header > table > tfoot > tr > th, .ant-table.ant-table-bordered > .ant-table-container > .ant-table-body > table > tfoot > tr > th, .ant-table.ant-table-bordered > .ant-table-container > .ant-table-content > table > tfoot > tr > td, .ant-table.ant-table-bordered > .ant-table-container > .ant-table-header > table > tfoot > tr > td, .ant-table.ant-table-bordered > .ant-table-container > .ant-table-body > table > tfoot > tr > td {
+  border-right: 0 !important;
+}
+
+.ant-table{
+  border: 1px solid #f0f0f0;
+}
+.ant-table.ant-table-bordered > .ant-table-container {
+  border: none !important;
+  border-right: 6px;
+  border-bottom: 0;
+}
+
+.ant-table.ant-table-bordered > .ant-table-container > .ant-table-content > table > tbody > tr > td,
+.ant-table.ant-table-bordered > .ant-table-container > .ant-table-content > table > thead > tr > th
+{
+  text-align: left !important;
+}
+
+h1,h2,h3,h4,h5,h6{
+  /*font-family: SFMono-Regular;*/
+}
+
+.close {
+  font-size: 2.3125rem !important;
+}
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 , p{
+  font-weight: 600 !important;
+}
+
+.tableBtn{
+  border-radius: 50px !important;
+  background-color: #2f353a !important;
+  /*'rgb(58 141 253)'*/
+}
+
+.ant-switch-checked{
+  background-color: #2f353a !important;
+}
+
+.tableBtn2,.swal2-styled.swal2-cancel{
+  border-radius: 50px !important;
+  /*background-color: #2f353a !important;*/
+  /*'rgb(58 141 253)'*/
+}
+.tableBtn3{
+  border-radius: 50px !important;
+  background-color: rgb(58 141 253) !important;
+  /*'rgb(58 141 253)'*/
+}
+
+.swal2-styled.swal2-confirm{
+  border-radius: 50px !important;
+  background-color: #2f353a !important;
+  border-left-color: #2f353a !important;
+  border-right-color: #2f353a !important;
+}
+.swal2-icon{
+  width: 3em !important;
+  height: 3em !important;
+}
+
+.swal2-icon .swal2-icon-content{
+  font-size: 2.75em !important;
+}
+
+.bg-gradient-primary{
+  /*background: linear-gradient(45deg,#4638c2,#2d2587)!important;*/
+  border-color: #2d2587!important;
+  cursor: pointer;
+  box-shadow: 0 3px 7px 0 #27258973, 0 3px 8px 0 rgba(0, 0, 0, 0.05);
+}
+
+.bg-gradient-info {
+  /*background: linear-gradient(45deg,#4799eb,#4280b4)!important;*/
+  border-color: #4280b4!important;
+  cursor: pointer;
+  box-shadow: 0 3px 7px 0 #4280b473, 0 3px 8px 0 rgba(0, 0, 0, 0.05);
+}
+
+.bg-gradient-warning {
+  /*background: linear-gradient(45deg,#e1a82d,#dd9124)!important;*/
+  border-color: #dd9124!important;
+  cursor: not-allowed;
+  box-shadow: 0 3px 7px 0 #dd912470, 0 3px 8px 0 rgba(0, 0, 0, 0.05);
+}
+
+.bg-gradient-danger {
+  /*background: linear-gradient(45deg,#d16767,#c14f4f)!important;*/
+  border-color: #c14f4f!important;
+  cursor: not-allowed;
+  box-shadow: 0 3px 7px 0 #c14f4f75, 0 3px 8px 0 rgba(0, 0, 0, 0.05);
+}
+
+.breadcrumb-item.active{
+  color: black !important;
+}
+
+.card-body {
+  padding: 3.25rem !important;
+}
+
+.text-black{
+  color: black !important;
+}
+
+.fontBold{
+  font-weight: bolder !important;
+  margin-bottom: 10px !important;
+}
+
+.lineHeight{
+  line-height: 0;
+  margin-top: 5px !important;
+}
+.ant-picker-input input {
+  border: none !important;
+}
+.centerItems{
+  display: flex;
+  align-items: center;
+}
+.ui.form .field :disabled ,.ui.disabled.dropdown{
+  opacity: 1 !important;
+}
+.ant-picker.ant-picker-disabled{
+  background: transparent !important;
+}
+
+@media (min-width: 992px){
+  .modal-lg, .modal-xl {
+    max-width: 90% !important;
+  }
+}
