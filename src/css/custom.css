@@ -1,0 +1,171 @@
+.add_topic{
+  height: 50px;
+  border-bottom-right-radius: 15px;
+  border-bottom-left-radius: 15px;
+  background: linear-gradient(to bottom, #6699ff 0%, #ccffff 100%);
+}
+
+.top_margin{
+  font-size: 25px;
+  margin-top: 50px;
+  /*font-family: SFMono-Regular;*/
+  font-weight: bold;
+}
+
+.table-bordered th, .table-bordered td {
+  text-align: center;
+}
+
+.table_center{
+  width: 400px;
+  margin: 0 auto;
+}
+
+.model-topic-div{
+  /*position: relative;*/
+  /*height: 50px;*/
+  /*border-radius: 30px;*/
+  /*width: 20vw;*/
+  /*background: linear-gradient(to bottom, #6699ff 0%, #ccffff 100%);*/
+}
+
+.model-topic-text{
+  text-align: left;
+  /*margin-left: 20vw;*/
+  padding-left: 8px;
+  /*font-size: 30px;*/
+  /*font-family: SFMono-Regular;*/
+  font-weight: bold;
+}
+.project-name{
+  text-align: left;
+  padding-left: 8px;
+  /*font-size: 20px;*/
+  /*font-family: SFMono-Regular;*/
+  /*-webkit-text-stroke: 1px #ffffff;*/
+  /*text-shadow: -1px 1px 0 #8b8883;*/
+  font-weight: bold;
+}
+
+.top_margin{
+  margin-top: 7px !important;
+}
+.button_margin{
+  width: 100%;
+  height: 38px;
+}
+
+.top_div{
+  margin-top: 7px;
+}
+
+.close {
+  margin-right: 5px;
+  font-size: 3.3125rem;
+}
+
+.ant-table-tbody > tr > td{
+  /*text-align: center;*/
+}
+.ant-table-thead > tr > th{
+  /*text-align: center;*/
+}
+/*.ant-table-container table > thead > tr:first-child th:first-child {*/
+  /*text-align: center;*/
+/*}*/
+
+.notification{
+  top: 6vh;
+  z-index: 2000;
+}
+
+.not-active {
+  pointer-events: none;
+  cursor: default;
+  text-decoration: none;
+}
+
+.user_name{
+  font-size: 18px;
+  margin-right: 20px;
+}
+
+.project-model{
+  /*text-align: right;*/
+  /*margin-left: 20vw;*/
+  /*padding-left: 30px;*/
+  font-size: 25px;
+  /*font-family: SFMono-Regular;*/
+  font-weight: bold;
+}
+
+.gg {
+  width: 45vw;
+  background: red;
+
+}
+
+/*.ant-table-cell{*/
+  /*text-align: left;*/
+/*}*/
+
+
+.ant-card{
+  cursor: context-menu;
+  box-shadow: 0 3px 7px 0 rgba(0, 0, 0, -0.8), 0 3px 8px 0 rgba(0, 0, 0, 0.19);
+}
+
+/*.ant-table-thead > tr > th, .ant-table-tbody > tr > td, .ant-table tfoot > tr > th, .ant-table tfoot > tr > td {*/
+  /*margin-left: 16px !important;*/
+/*}*/
+
+.ant-table-thead > tr > th, .ant-table-tbody > tr > td, .ant-table tfoot > tr > th, .ant-table tfoot > tr > td {
+  padding: 8px 5px !important;
+}
+
+.submit{
+  justify-content: center;
+  margin: auto;
+}
+
+.modal-header .close {
+  padding: 1rem 2rem!important;
+  margin: -1rem -1rem -1rem auto!important;
+  border-style: none!important;
+}
+
+.home-png{
+margin-top: 30vh;
+}
+
+
+.task-topic{
+  /*margin-top: -15px;*/
+  /*margin-left: -5px;*/
+  margin-top: -10px;
+  margin-left: -16px;
+  font-size: 13px;
+}
+
+.font-p{
+  /*font-size: 25px;*/
+  /*margin-top: -50px;*/
+  text-align: center;
+  margin-top: -13px !important;
+  font-size: 18px;
+  color: red;
+}
+
+.hours_margin{
+  /*margin-top: -30px;*/
+  text-align: left;
+  margin-top: -10px;
+}
+
+/*.ant-card-bordered {*/
+  /*height: 50px !important;*/
+/*}*/
+
+.cardView{
+  height: 50px !important;
+}
