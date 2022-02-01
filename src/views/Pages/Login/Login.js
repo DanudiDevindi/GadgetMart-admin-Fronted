@@ -27,7 +27,11 @@ import {HOME_PATH} from "../../../routes";
 
 class Login extends Component {
 
-  
+    state = {
+        loading: false,
+        userName: '',
+        password: ''
+      };
     
      
 
