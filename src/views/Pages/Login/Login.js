@@ -43,7 +43,73 @@ class Login extends Component {
         }
       }
     
+      changeHandler = (event) => {
+        this.setState({
+          [event.target.name]: event.target.value
+        })
+      };
     
+      clickLogin = (e) => {
+   
+      if (this.state.userName !== "" && this.state.password !== "") {
+          axios.post(
+            '/auth/login', {
+              username: this.state.userName,
+              password: this.state.password
+            })
+            .then(res => {
+              if (res.data.state) {
+                if (res.data.userType !== "ADMIN") {
+                  message.error({
+                    top: 100,
+                    duration: 1,
+                    maxCount: 3,
+                    rtl: true,
+                    content: 'Action prohibited',
+                    onClose: {}
+                  });
+                } else {
+                  localStorage.setItem('login_response', JSON.stringify(res));
+                  Cookie.set('logged', 'true', {path: '/', expires: 7});
+                  Cookie.set('userId', res.data.userId, {path: '/', expires: 7});
+                  Cookie.set('userRole', res.data.userType, {path: '/', expires: 7});
+                  Cookie.set('firstName', 'Super', {path: '/', expires: 7});
+                  Cookie.set('lastName', 'Admin', {path: '/', expires: 7});
+                  Cookie.set('access_token', res.data.token, {path: '/', expires: 7});
+                  this.props.history.push(HOME_PATH+'/home');
+                }
+              } else {
+                message.error({
+                  top: 100,
+                  duration: 1,
+                  maxCount: 3,
+                  rtl: true,
+                  content: res.data.message,
+                  onClose: {}
+                });
+              }
+            })
+            .catch(err => {
+              message.error({
+                top: 100,
+                duration: 2,
+                maxCount: 3,
+                rtl: true,
+                content: 'User Not Found!'
+              });
+    
+            });
+        } else {
+          message.warning({
+            top: 100,
+            duration: 2,
+            maxCount: 3,
+            rtl: true,
+            content: "Empty User Name, Password!"
+          });
+        }
+    
+      };
      
 
     render() {
