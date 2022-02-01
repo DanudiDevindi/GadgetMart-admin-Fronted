@@ -32,6 +32,17 @@ class Login extends Component {
         userName: '',
         password: ''
       };
+
+      UNSAFE_componentWillMount(){
+        if (Cookie.get('access_token') !== undefined) {
+          if (Cookie.get('userRole') === "EMPLOYEE") {
+            this.props.history.push(HOME_PATH+'/add');
+          } else {
+            this.props.history.push(HOME_PATH+'/home');
+          }
+        }
+      }
+    
     
      
 
