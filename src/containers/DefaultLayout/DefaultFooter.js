@@ -15,7 +15,7 @@ class DefaultFooter extends Component {
 
     return (
       <React.Fragment>
-        <span className="ml-auto">Powered by Gadget Mart</span>
+        <span className="ml-auto">© Gadget-Mart Holdings PLC. All Rights Reserved</span>
       </React.Fragment>
     );
   }
