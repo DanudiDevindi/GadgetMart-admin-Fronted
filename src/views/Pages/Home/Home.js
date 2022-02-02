@@ -20,6 +20,15 @@ class Home extends Component {
         userCount: 0
       };
     
+      UNSAFE_componentWillMount() {
+        if (Cookies.get('logged') === undefined) {
+          this.props.history.push(HOME_PATH + '/login');
+        } else {
+          this.loadAllUsers();
+          this.getAllOrder();
+          this.loadAllProviders();
+        }
+      }
       
     
 
