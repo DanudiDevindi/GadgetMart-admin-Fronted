@@ -41,6 +41,30 @@ class Home extends Component {
             console.log(err);
           })
       };
+
+      getAllOrder() {
+        axios.get(
+          '/order/all-orders'
+        )
+          .then(res => {
+            let orderCount = 0, pendingCount = 0;
+            res.data.map(item=>{
+              if (item.status === 'PENDING'){
+                pendingCount += 1;
+              } else {
+                orderCount += 1;
+              }
+            })
+    
+            this.setState({
+              orderCount: orderCount,
+              pendingCount: pendingCount
+            })
+          })
+          .catch(err => {
+            console.log(err);
+          })
+      }
    
 
     render() {
