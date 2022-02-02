@@ -30,7 +30,18 @@ class Home extends Component {
         }
       }
       
-    
+      loadAllUsers = () => {
+        axios.get('/user/getall-users')
+          .then(res => {
+            this.setState({
+              userCount: res.data.length
+            })
+          })
+          .catch(err => {
+            console.log(err);
+          })
+      };
+   
 
     render() {
         return (
