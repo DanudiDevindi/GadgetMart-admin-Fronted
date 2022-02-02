@@ -65,6 +65,20 @@ class Home extends Component {
             console.log(err);
           })
       }
+
+      loadAllProviders = () => {
+        axios.get(
+          '/provider'
+        )
+          .then(res => {
+            this.setState({
+              providerCount: res.data.length
+            })
+          })
+          .catch(err => {
+            console.log(err);
+          })
+      };
    
 
     render() {
