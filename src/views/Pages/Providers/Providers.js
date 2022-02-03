@@ -109,6 +109,13 @@ class UserProfile extends Component {
             console.log(err);
           })
       };
+
+      onChange = (event) => {
+        this.setState({
+          [event.target.name]: event.target.value,
+        });
+      };
+    
     render() {
         return (
           <div className="animated fadeIn">
