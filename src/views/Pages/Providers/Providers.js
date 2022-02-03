@@ -9,8 +9,59 @@ import {Button} from "semantic-ui-react";
 import Swa2 from "sweetalert2";
 import {AiOutlineCloseCircle} from "react-icons/ai";
 
+const Toast = Swa2.mixin({
+    toast: true,
+    position: 'top',
+    showConfirmButton: false,
+    timer: 2000,
+    // timerProgressBar: true,
+    onOpen: (toast) => {
+      toast.addEventListener('mouseenter', Swa2.stopTimer);
+      toast.addEventListener('mouseleave', Swa2.resumeTimer)
+    }
+  });
 
 class UserProfile extends Component {
+
+    state = {
+        tableRow: [],
+        providerId: '',
+        providerName: '',
+        providerUrl: '',
+        providerNameEntered: false,
+        save: true,
+      };
+    
+      createUserTableColumns = [
+        {
+          title: 'No',
+          dataIndex: 'no',
+          key: 'no',
+          width: 30,
+          align: 'center',
+        },
+        {
+          title: 'Provider Name',
+          dataIndex: 'name',
+          key: 'name',
+          width: 150,
+          align: 'center',
+        },
+        {
+          title: 'Url',
+          dataIndex: 'url',
+          key: 'url',
+          width: 210,
+          align: 'center',
+        },
+        {
+          title: 'Action',
+          dataIndex: 'action',
+          key: 'action',
+          width: 60,
+          align: 'center',
+        },
+      ];
 
     render() {
         return (
