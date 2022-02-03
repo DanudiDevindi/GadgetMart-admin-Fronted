@@ -63,6 +63,13 @@ class UserProfile extends Component {
         },
       ];
 
+      UNSAFE_componentWillMount() {
+        if (Cookies.get('logged') === undefined) {
+          this.props.history.push('/login');
+        } else {
+          this.loadAllProvidersTable();
+        }
+      }
     render() {
         return (
           <div className="animated fadeIn">
