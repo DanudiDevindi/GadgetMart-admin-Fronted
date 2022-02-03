@@ -115,6 +115,40 @@ class UserProfile extends Component {
           [event.target.name]: event.target.value,
         });
       };
+      saveProvider = (type,subPath) => {
+        axios[type](
+          '/provider'+subPath, {
+            providerId: this.state.providerId,
+            name: this.state.providerName,
+            url: this.state.providerUrl
+          },
+        )
+          .then(res => {
+            if (res.data) {
+              this.setState({
+                providerId: '',
+                providerName: '',
+                providerUrl: '',
+              });
+              this.loadAllProvidersTable();
+              Toast.fire({
+                icon: 'success',
+                title: 'Action success!'
+              });
+            } else {
+              Toast.fire({
+                icon: 'error',
+                title: 'Action Fail!'
+              });
+            }
+          })
+          .catch(err => {
+            Toast.fire({
+              icon: 'error',
+              title: err
+            });
+          })
+      }
     
     render() {
         return (
@@ -161,7 +195,7 @@ class UserProfile extends Component {
                       <Button
                         className='mr-3 m-1 tableBtn'
                         positive size='small'
-                        style={{'float': 'right', color: 'white'}}
+                        style={{'float': 'right', color: 'white', background: 'blue'}}
                         disabled={this.state.providerName === '' || this.state.providerUrl === ''}
                         onClick={() => this.saveProvider(this.state.save ? 'post' : 'patch','')}
                       >{this.state.save ? 'Add Service Provider' : 'Update Provider'}</Button>
