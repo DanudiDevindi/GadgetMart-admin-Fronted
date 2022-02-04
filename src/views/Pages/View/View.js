@@ -25,9 +25,179 @@ const Toast = Swa2.mixin({
       toast.addEventListener('mouseleave', Swa2.resumeTimer)
     }
   });
+
+  let user_columns = [
+    {
+      title: 'Id',
+      dataIndex: 'id',
+      key: 'id',
+      width: 50,
+      align: 'center',
+    },
+    {
+      title: 'Customer',
+      dataIndex: 'name',
+      key: 'name',
+      width: 120,
+      align: 'center',
+    },
+    {
+      title: 'Address',
+      dataIndex: 'address',
+      key: 'address',
+      width: 120,
+      align: 'center',
+    },
+    {
+      title: 'Contact',
+      dataIndex: 'contact',
+      key: 'contact',
+      width: 70,
+      align: 'center',
+    },
+    {
+      title: 'Payment Method',
+      dataIndex: 'paymentMethod',
+      key: 'paymentMethod',
+      align: 'left',
+      width: 100,
+    },
+    {
+      title: 'Total Cost',
+      dataIndex: 'totalCost',
+      key: 'totalCost',
+      align: 'left',
+      width: 100,
+    },
+    {
+      title: 'Status',
+      dataIndex: 'status',
+      key: 'status',
+      width: 50,
+      align: 'center',
+    },
+    {
+      title: 'Action',
+      dataIndex: 'action',
+      key: 'action',
+      align: 'center',
+      width: 150,
+    },
+  ];
   
+  let item_columns = [
+    {
+      title: 'Id',
+      dataIndex: 'id',
+      key: 'id',
+      width: 50,
+      align: 'center',
+    },
+    {
+      title: 'Item Name',
+      dataIndex: 'name',
+      key: 'name',
+      width: 150,
+      align: 'center',
+    },
+    {
+      title: 'Price',
+      dataIndex: 'price',
+      key: 'price',
+      width: 100,
+      align: 'center',
+    },
+    {
+      title: 'Delivery Cost',
+      dataIndex: 'deliveryCost',
+      key: 'deliveryCost',
+      width: 70,
+      align: 'center',
+    },
+    {
+      title: 'Brand',
+      dataIndex: 'brand',
+      key: 'brand',
+      align: 'left',
+      width: 120,
+    },
+    {
+      title: 'Category',
+      dataIndex: 'category',
+      key: 'category',
+      align: 'left',
+      width: 120,
+    },
+    {
+      title: 'Discount',
+      dataIndex: 'discount',
+      key: 'discount',
+      width: 50,
+      align: 'center',
+    },
+    {
+      title: 'Shop',
+      dataIndex: 'shop',
+      key: 'shop',
+      align: 'center',
+      width: 100,
+    },
+    {
+      title: 'Warranty',
+      dataIndex: 'warranty',
+      key: 'warranty',
+      align: 'center',
+      width: 100,
+    },
+    {
+      title: 'Qty',
+      dataIndex: 'qty',
+      key: 'qty',
+      align: 'center',
+      width: 50,
+    },
+    {
+      title: 'Final Price',
+      dataIndex: 'fprice',
+      key: 'fprice',
+      align: 'center',
+      width: 50,
+    },
+  ];
+
 
 class View extends Component {
+
+    state = {
+        table_columns: [],
+        table_rows: [],
+        item_rows: [],
+        modal: false,
+        status: [
+          {
+            key: 0,
+            value: 'PENDING',
+            text: 'PENDING',
+          },
+          {
+            key: 1,
+            value: 'APPROVED',
+            text: 'APPROVED',
+          },
+          {
+            key: 2,
+            value: 'REJECTED',
+            text: 'REJECTED',
+          },
+          {
+            key: 3,
+            value: 'COMPLETE',
+            text: 'COMPLETE',
+          }
+        ],
+        selectedStatus: ''
+      };
+    
 
     render() {
         return (
