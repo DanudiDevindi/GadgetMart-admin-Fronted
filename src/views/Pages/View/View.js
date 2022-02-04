@@ -205,6 +205,125 @@ class View extends Component {
         }
       }
 
+      getAllOrder() {
+        axios.get(
+          '/order/all-orders'
+        )
+          .then(res => {
+            const array = [];
+            res.data.map((value, index) => {
+              if (this.state.selectedStatus === ''){
+                array.push({
+                  key: index,
+                  id: index + 1,
+                  name: value.name,
+                  address: value.address,
+                  contact: value.contact,
+                  paymentMethod: value.paymentMethod,
+                  totalCost: value.totalCost.toFixed(2),
+                  status: value.status,
+                  action:
+                    <div>
+                      {
+                        value.status === 'PENDING' &&
+                          <>
+                            <Button size='mini'
+                                    className="positive ui button bg-success tableBtn2"
+                                    onClick={()=>this.updateOrders(value.order_id,'ACCEPT')}
+                            >Accept</Button>
+                            <Button size='mini'
+                                    className="positive ui button bg-danger tableBtn2"
+                                    onClick={()=>this.updateOrders(value.order_id,'REJECT')}
+                            >Reject</Button>
+                          </>
+                      }
+                      {
+                        value.status === 'REJECT' &&
+                        <>
+                          <Button size='mini'
+                                  className="positive ui button bg-success tableBtn2"
+                                  onClick={()=>this.updateOrders(value.order_id,'ACCEPT')}
+                          >Accept</Button>
+                        </>
+                      }
+                      {
+                        value.status === 'ACCEPT' &&
+                        <>
+                          <Button size='mini'
+                                  className="positive ui button bg-success tableBtn2"
+                                  onClick={()=>this.updateOrders(value.order_id,'COMPLETE')}
+                          >Complete</Button>
+                        </>
+                      }
+                      <Button size='mini'
+                              className="positive ui button tableBtn"
+                              onClick={()=>this.viewOrderItems(value)}
+                      >View</Button>
+                    </div>
+                });
+              } else {
+                if (this.state.selectedStatus === value.status){
+                  array.push({
+                    key: index,
+                    id: index + 1,
+                    name: value.name,
+                    address: value.address,
+                    contact: value.contact,
+                    paymentMethod: value.paymentMethod,
+                    totalCost: value.totalCost.toFixed(2),
+                    status: value.status,
+                    action:
+                      <div>
+                        {
+                          value.status === 'PENDING' &&
+                          <>
+                            <Button size='mini'
+                                    className="positive ui button bg-success tableBtn2"
+                                    onClick={()=>this.updateOrders(value.order_id,'ACCEPT')}
+                            >Accept</Button>
+                            <Button size='mini'
+                                    className="positive ui button bg-danger tableBtn2"
+                                    onClick={()=>this.updateOrders(value.order_id,'REJECT')}
+                            >Reject</Button>
+                          </>
+                        }
+                        {
+                          value.status === 'REJECT' &&
+                          <>
+                            <Button size='mini'
+                                    className="positive ui button bg-success tableBtn2"
+                                    onClick={()=>this.updateOrders(value.order_id,'ACCEPT')}
+                            >Accept</Button>
+                          </>
+                        }
+                        {
+                          value.status === 'ACCEPT' &&
+                          <>
+                            <Button size='mini'
+                                    className="positive ui button bg-success tableBtn2"
+                                    onClick={()=>this.updateOrders(value.order_id,'COMPLETE')}
+                            >Complete</Button>
+                          </>
+                        }
+                        <Button size='mini'
+                                className="positive ui button tableBtn"
+                                onClick={()=>this.viewOrderItems(value)}
+                        >View</Button>
+                      </div>
+                  });
+                }
+              }
+    
+            });
+            this.setState({
+              table_rows: array
+            })
+          })
+          .catch(err => {
+            console.log(err);
+          })
+      }
+
     render() {
         return (
           <div>
