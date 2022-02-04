@@ -27,6 +27,10 @@ const Toast = Swa2.mixin({
 
 class UserProfile extends Component {
 
+    state = {
+        createUserTableRows: [],
+      };
+
     render() {
         return (
           <div className="animated fadeIn">
