@@ -14,6 +14,19 @@ const {RangePicker} = DatePicker;
 
 const dateFormat = 'YYYY-MM-DD';
 
+const Toast = Swa2.mixin({
+    toast: true,
+    position: 'top',
+    showConfirmButton: false,
+    timer: 2000,
+    // timerProgressBar: true,
+    onOpen: (toast) => {
+      toast.addEventListener('mouseenter', Swa2.stopTimer);
+      toast.addEventListener('mouseleave', Swa2.resumeTimer)
+    }
+  });
+  
+
 class View extends Component {
 
     render() {
