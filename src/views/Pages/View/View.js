@@ -385,6 +385,18 @@ class View extends Component {
         this.setState({item_rows})
       }
 
+      toggle = ()=> {
+        this.setState({modal: !this.state.modal})
+      }
+    
+      handleChangeStatus = (event, data) => {
+        this.setState({
+          selectedStatus: data.value,
+        });
+        this.getAllOrder();
+      };
+
+
     render() {
         return (
           <div>
