@@ -197,7 +197,13 @@ class View extends Component {
         ],
         selectedStatus: ''
       };
-    
+      async UNSAFE_componentWillMount() {
+        if (Cookies.get('logged') === undefined) {
+          this.props.history.push(HOME_PATH+'/login');
+        } else {
+          this.getAllOrder();
+        }
+      }
 
     render() {
         return (
