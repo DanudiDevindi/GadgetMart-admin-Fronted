@@ -324,6 +324,42 @@ class View extends Component {
           })
       }
 
+      updateOrders = (id, status) => {
+        axios.patch(
+          '/order',
+          {
+            order_id: id,
+            status: status
+          }
+        )
+          .then(res => {
+            if (res.data){
+              this.getAllOrder();
+            } else{
+              message.error({
+                top: 100,
+                duration: 1,
+                maxCount: 3,
+                rtl: true,
+                content: 'Unable to update status',
+                onClose: {}
+              });
+            }
+          })
+          .catch(err => {
+            console.log(err);
+            message.error({
+              top: 100,
+              duration: 1,
+              maxCount: 3,
+              rtl: true,
+              content: 'Unable to update status',
+              onClose: {}
+            });
+          })
+      }
+    
+
     render() {
         return (
           <div>
