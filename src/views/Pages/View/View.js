@@ -358,7 +358,32 @@ class View extends Component {
             });
           })
       }
-    
+      viewOrderItems = (order) => {
+        this.toggle();
+        const item_rows = [];
+        order.orderDetail.map((value,index)=>{
+          let price = value.price;
+          if (value.discount !== null && value.discount !== 0) {
+            price = (value.price-(value.price/100*value.discount));
+          }
+          item_rows.push({
+            key: index,
+            id: index + 1,
+            name: value.name,
+            price: value.price,
+            deliveryCost: value.deliveryCost,
+            brand: value.brand,
+            category: value.category,
+            discount: value.discount,
+            shop: value.shop,
+            soldOut: value.soldOut,
+            warranty: value.warranty,
+            qty: value.qty,
+            fprice: ((price*value.qty)+value.deliveryCost).toFixed(2)
+          })
+        })
+        this.setState({item_rows})
+      }
 
     render() {
         return (
