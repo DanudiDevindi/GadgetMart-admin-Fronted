@@ -31,6 +31,44 @@ class UserProfile extends Component {
         createUserTableRows: [],
       };
 
+      createUserTableColumns = [
+        {
+          title: 'No',
+          dataIndex: 'no',
+          key: 'no',
+          width: 30,
+          align: 'center',
+        },
+        {
+          title: 'Name',
+          dataIndex: 'name',
+          key: 'name',
+          width: 150,
+          align: 'center',
+        },
+        {
+          title: 'Address',
+          dataIndex: 'address',
+          key: 'address',
+          width: 110,
+          align: 'center',
+        },
+        {
+          title: 'Contact Number',
+          dataIndex: 'contact',
+          key: 'contact',
+          width: 60,
+          align: 'center',
+        },
+        {
+          title: 'Email',
+          dataIndex: 'email',
+          key: 'email',
+          width: 80,
+          align: 'center',
+        },
+      ];
+
     render() {
         return (
           <div className="animated fadeIn">
