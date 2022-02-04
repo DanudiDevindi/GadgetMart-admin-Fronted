@@ -77,6 +77,30 @@ class UserProfile extends Component {
         }
       }
 
+      loadAllUsersTable = () => {
+        axios.get(
+          '/user/getall-users'
+        )
+          .then(res => {
+            const array = [];
+            res.data.map((value, index) => {
+              array.push({
+                key: index,
+                no: index + 1,
+                name: value.name,
+                address: value.address,
+                contact: value.contact,
+                email: value.email,
+              });
+            });
+            this.setState({
+              createUserTableRows: array
+            })
+          })
+          .catch(err => {
+            console.log(err);
+          })
+      };
     render() {
         return (
           <div className="animated fadeIn">
