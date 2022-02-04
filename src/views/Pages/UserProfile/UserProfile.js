@@ -12,7 +12,43 @@ import {Form, FormGroup, Input, InputGroup, InputGroupAddon, InputGroupText} fro
 import Swa2 from "sweetalert2";
 import {message} from "antd/lib/index";
 
+const Toast = Swa2.mixin({
+    toast: true,
+    position: 'top',
+    showConfirmButton: false,
+    timer: 2000,
+    // timerProgressBar: true,
+    onOpen: (toast) => {
+      toast.addEventListener('mouseenter', Swa2.stopTimer);
+      toast.addEventListener('mouseleave', Swa2.resumeTimer)
+    }
+  });
+  
+
 class UserProfile extends Component {
+
+    render() {
+        return (
+          <div className="animated fadeIn">
+            <div>
+    
+              <br/>
+              <div className="row">
+                <div className="col">
+                  <Table
+                    bordered={true}
+                    pagination={{pageSize: 10}}
+                    className="mr-5 ml-5 text-center"
+                    columns={this.createUserTableColumns}
+                    dataSource={this.state.createUserTableRows}
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        );
+      }
+
 }
 
 export default UserProfile;
